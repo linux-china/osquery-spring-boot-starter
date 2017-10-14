@@ -30,9 +30,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:linux-china/spring-boot-starter-httpclient.git</connection>
-        <developerConnection>scm:git:git@github.com:linux-china/spring-boot-starter-httpclient.git</developerConnection>
-        <url>https://github.com/linux-china/spring-boot-starter-httpclient</url>
+        <connection>scm:git:git@github.com:linux-china/osquery-spring-boot-starter.git</connection>
+        <developerConnection>scm:git:git@github.com:linux-china/osquery-spring-boot-starter.git</developerConnection>
+        <url>https://github.com/linux-china/osquery-spring-boot-starter</url>
     </scm>
 
     <dependencies>

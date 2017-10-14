@@ -1,4 +1,4 @@
-Spring Boot Starter OkHttp3
+Spring Boot Starter osquery
 ===========================
 Integrate osquery in Spring Boot to display osquery information
 

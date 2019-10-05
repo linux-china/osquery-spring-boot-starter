@@ -1,8 +1,12 @@
 package org.mvnsearch.spring.boot.osquery;
 
 import org.mvnsearch.osquery.OsqueryProcess;
-import org.springframework.boot.actuate.endpoint.AbstractEndpoint;
+import org.mvnsearch.osquery.jdbc.ProcessResult;
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+import org.springframework.boot.actuate.endpoint.annotation.Selector;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,15 +15,15 @@ import java.util.Map;
  *
  * @author linux_china
  */
-public class OsqueryEndpoint extends AbstractEndpoint<Map<String, Object>> {
+@Endpoint(id = "osquery", enableByDefault = true)
+public class OsqueryEndpoint {
     private OsqueryProcess osquery;
 
     public OsqueryEndpoint() {
-        super("osquery");
         osquery = new OsqueryProcess();
     }
 
-    @Override
+    @ReadOperation
     public Map<String, Object> invoke() {
         Map<String, Object> info = new HashMap<>();
         String version = osquery.getVersion();
@@ -29,4 +33,11 @@ public class OsqueryEndpoint extends AbstractEndpoint<Map<String, Object>> {
         info.put("schema", "https://osquery.io/schema/" + version + "/");
         return info;
     }
+
+    @ReadOperation
+    public String tableShow(@Selector String tableName) throws IOException {
+        ProcessResult result = osquery.getTableOutput(tableName, "json");
+        return result.getOutput();
+    }
+
 }

@@ -4,3 +4,7 @@ GET http://localhost:8888/actuator/osquery
 ### osquery schema
 GET http://localhost:8888/actuator/osquery/apps
 
+### osquery schema with columns
+GET http://localhost:8888/actuator/osquery/apps/name,path
+
+###

@@ -16,9 +16,4 @@ public class OsqueryAutoConfiguration {
     public OsqueryEndpoint osqueryEndpoint() {
         return new OsqueryEndpoint();
     }
-
-    @Bean
-    public OsqueryOperationEndpoint osqueryOperationEndpoint() {
-        return new OsqueryOperationEndpoint(osqueryEndpoint());
-    }
 }

@@ -1,6 +1,7 @@
 Spring Boot Starter osquery
 ===========================
-Integrate osquery in Spring Boot to query system information.
+
+Integrate osquery in Spring Boot 2/3.x to query system information.
 
 Why Spring Boot starter for osquery?
 

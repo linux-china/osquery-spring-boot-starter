@@ -1,7 +1,7 @@
 package org.mvnsearch.spring.boot.osquery;
 
 import org.mvnsearch.osquery.OsqueryProcess;
-import org.mvnsearch.osquery.jdbc.ProcessResult;
+import org.mvnsearch.osquery.ProcessResult;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
 import org.springframework.boot.actuate.endpoint.annotation.Selector;
 import org.springframework.boot.actuate.endpoint.web.annotation.WebEndpoint;

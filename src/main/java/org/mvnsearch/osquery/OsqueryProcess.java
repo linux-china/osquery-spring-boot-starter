@@ -1,6 +1,5 @@
 package org.mvnsearch.osquery;
 
-import org.mvnsearch.osquery.jdbc.ProcessResult;
 import org.springframework.util.StreamUtils;
 import org.springframework.util.StringUtils;
 

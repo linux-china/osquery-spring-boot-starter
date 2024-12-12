@@ -15,6 +15,11 @@ import java.util.List;
  * @author linux_china
  */
 public class OsqueryProcess {
+  private String osqueryiPath = "osqueryi";
+
+  public void setOsqueryiPath(String osqueryiPath) {
+    this.osqueryiPath = osqueryiPath;
+  }
 
   public String getVersion() {
     ProcessResult result = execute("--version");
@@ -54,7 +59,7 @@ public class OsqueryProcess {
   private ProcessResult execute(String... args) {
     try {
       List<String> command = new ArrayList<>();
-      command.add("osqueryi");
+      command.add(osqueryiPath);
       command.addAll(Arrays.asList(args));
       ProcessBuilder pb = new ProcessBuilder(command);
       Process p = pb.start();

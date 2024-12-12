@@ -11,6 +11,19 @@ Integrate osquery in Spring Boot to query system information.
 **Note**: By default, the output is in CSV format. If you want to output in JSON format,
 you can add format query string, such as `/osquery/etc_hosts?format=json`.
 
+Examples:
+
+```
+### osquery
+GET http://localhost:8888/actuator/osquery
+
+### osquery schema
+GET http://localhost:8888/actuator/osquery/etc_hosts
+
+### osquery schema with columns
+GET http://localhost:8888/actuator/osquery/etc_hosts(address,hostnames)
+```
+
 # DuckDB friendly
 
 ```shell

@@ -11,7 +11,7 @@ Why Spring Boot starter for osquery?
 
 # Get Started
 
-- Install osquery: https://osquery.io/
+- Install osquery from https://github.com/osquery/osquery/releases
 - Add dependency in your `pom.xml`:
 
 ```xml

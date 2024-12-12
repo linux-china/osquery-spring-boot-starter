@@ -2,6 +2,12 @@ Spring Boot Starter osquery
 ===========================
 Integrate osquery in Spring Boot to query system information.
 
+Why Spring Boot starter for osquery?
+
+- osquery is a powerful tool to query system information
+- Query system information by REST API through Spring Boot Actuator endpoints
+- You can use DuckDB, DataFusion to aggregate data from multi instances and store the data in S3/MinIO etc.
+
 # Get Started
 
 - Install osquery: https://osquery.io/

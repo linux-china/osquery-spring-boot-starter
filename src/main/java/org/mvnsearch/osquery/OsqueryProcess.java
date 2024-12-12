@@ -44,6 +44,8 @@ public class OsqueryProcess {
   public ProcessResult query(String sql, String format) {
     if (StringUtils.isEmpty(format)) {
       return execute(sql);
+    } else if (format.equals("csv")) {
+      return execute("--csv", "--separator", ",", sql);
     } else {
       return execute("--" + format, sql);
     }

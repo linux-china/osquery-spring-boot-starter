@@ -1,8 +1,9 @@
 package org.mvnsearch.osquery.jdbc;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -17,13 +18,13 @@ import java.sql.Statement;
 public class OsqueryJdbcTest {
     private static OsqueryConnection connection;
 
-    @BeforeClass
+    @BeforeAll
     public static void setUp() throws Exception {
         DriverManager.registerDriver(new OsqueryJdbcDriver());
         connection = (OsqueryConnection) DriverManager.getConnection("jdbc:osquery:local");
     }
 
-    @AfterClass
+    @AfterAll
     public static void tearDown() throws Exception {
         connection.close();
     }

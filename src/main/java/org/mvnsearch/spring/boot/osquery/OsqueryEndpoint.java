@@ -25,6 +25,11 @@ public class OsqueryEndpoint {
     osquery = new OsqueryProcess();
   }
 
+  public OsqueryEndpoint(String osqueryiPath) {
+    osquery = new OsqueryProcess();
+    osquery.setOsqueryiPath(osqueryiPath);
+  }
+
   @ReadOperation
   public Map<String, Object> invoke() {
     Map<String, Object> info = new HashMap<>();

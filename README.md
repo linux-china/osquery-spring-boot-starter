@@ -67,7 +67,4 @@ $ duckdb -c "SELECT * FROM read_csv('http://localhost:8888/actuator/osquery/etc_
 # References
 
 * osquery schema: https://osquery.io/schema/
-* How to create jdbc
-  driver : https://www.javaworld.com/article/2074249/data-storage/create-your-own-type-3-jdbc-driver--part-1.html
-* CVSJdbc: https://github.com/jprante/jdbc-driver-csv
-* Sqlite JDBC: https://bitbucket.org/xerial/sqlite-jdbc
+* DuckDB: https://duckdb.org/

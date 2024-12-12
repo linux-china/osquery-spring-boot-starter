@@ -7,6 +7,7 @@ import org.springframework.boot.actuate.endpoint.annotation.Selector;
 import org.springframework.boot.actuate.endpoint.web.annotation.WebEndpoint;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,15 +37,18 @@ public class OsqueryEndpoint {
   }
 
   @ReadOperation
-  public ResponseEntity<String> table(@Selector String tableName) {
+  public ResponseEntity<String> table(@Selector String tableName, @Nullable String format) {
+    if (format == null) {
+      format = "csv";
+    }
     String output;
     if (tableName.contains("(")) {  // query with columns
       String newTableName = tableName.substring(0, tableName.indexOf("("));
       String columnNames = tableName.substring(tableName.indexOf("(") + 1, tableName.indexOf(")"));
-      ProcessResult result = osquery.query("select " + columnNames + " from " + newTableName, "csv");
+      ProcessResult result = osquery.query("select " + columnNames + " from " + newTableName, format);
       output = result.getOutput();
     } else {
-      ProcessResult result = osquery.getTableOutput(tableName, "csv");
+      ProcessResult result = osquery.getTableOutput(tableName, format);
       output = result.getOutput();
     }
     return ResponseEntity.ok()

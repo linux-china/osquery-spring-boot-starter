@@ -7,4 +7,9 @@ GET http://localhost:8888/actuator/osquery/etc_hosts?format=csv
 ### osquery schema with columns
 GET http://localhost:8888/actuator/osquery/etc_hosts(address,hostnames)
 
-###
+### osquery load_average
+GET http://localhost:8888/actuator/osquery/load_average
+
+### osquery processes
+GET http://localhost:8888/actuator/osquery/processes
+

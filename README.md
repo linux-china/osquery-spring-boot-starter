@@ -57,12 +57,23 @@ GET http://localhost:8888/actuator/osquery/etc_hosts
 
 ### osquery schema with columns
 GET http://localhost:8888/actuator/osquery/etc_hosts(address,hostnames)
+
+### osquery for load average
+GET http://localhost:8888/actuator/osquery/load_average
 ```
 
 # DuckDB friendly
 
+Query load average:
+
 ```shell
-$ duckdb -c "SELECT * FROM read_csv('http://localhost:8888/actuator/osquery/etc_hosts')"
+$ duckdb -c "SELECT * FROM read_csv('http://localhost:8888/actuator/osquery/load_average')"
+```
+
+Query processes:
+
+ ```shell
+$ duckdb -c "SELECT * FROM read_csv('http://localhost:8888/actuator/osquery/processes') where name like '%java%'"
 ```
 
 # References

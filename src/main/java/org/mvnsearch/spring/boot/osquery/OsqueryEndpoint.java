@@ -46,6 +46,10 @@ public class OsqueryEndpoint {
     if (format == null) {
       format = "csv";
     }
+    if (tableName.endsWith(".csv")) {
+      format = "csv";
+      tableName = tableName.substring(0, tableName.length() - ".csv".length());
+    }
     String output;
     if (tableName.contains("(")) {  // query with columns
       String newTableName = tableName.substring(0, tableName.indexOf("("));

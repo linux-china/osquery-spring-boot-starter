@@ -68,6 +68,7 @@ Query load average:
 
 ```shell
 $ duckdb -c "SELECT * FROM read_csv('http://localhost:8888/actuator/osquery/load_average')"
+$ duckdb -c "SELECT * FROM 'http://localhost:8888/actuator/osquery/load_average.csv'"
 ```
 
 Query processes:

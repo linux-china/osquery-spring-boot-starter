@@ -2,7 +2,7 @@
 GET http://localhost:8888/actuator/osquery
 
 ### osquery schema
-GET http://localhost:8888/actuator/osquery/etc_hosts?format=csv
+GET http://localhost:8888/actuator/osquery/etc_hosts.csv
 
 ### osquery schema with columns
 GET http://localhost:8888/actuator/osquery/etc_hosts(address,hostnames)

@@ -17,7 +17,7 @@
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <spring-boot.version>3.4.0</spring-boot.version>
+    <spring-boot.version>3.5.0</spring-boot.version>
   </properties>
 
   <developers>
@@ -82,7 +82,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.13.0</version>
+        <version>3.14.0</version>
         <configuration>
           <parameters>true</parameters>
         </configuration>
